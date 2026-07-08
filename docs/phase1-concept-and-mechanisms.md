@@ -17,8 +17,8 @@
 | Dose per serving | Varies by ingredient — see proposed dose envelope (§2) | Founder ("depends") |
 | Storage/refrigeration | Unknown — recommendation in §3 | Founder ("advise me") |
 
-> **Open item:** Founder will supply a concept sketch/picture. Phase 2 CAD will be
-> reconciled against it before modeling starts.
+> Founder supplied three AI-generated concept renders (rough intent only, not a
+> final design). They are reconciled against this phase in **§6**.
 
 ### 1.1 What "up to 10 cartridges, powder AND liquid" forces on the design
 
@@ -285,8 +285,52 @@ that is a different product. Recommendation stands on B.
 
 ---
 
+## 6. Reconciliation with founder's concept renders
+
+The three renders (Gemini-generated, directional only) show:
+
+1. **An under-counter, plumbed, pull-out-drawer appliance** integrated into
+   cabinetry, with a dedicated counter-top tap/faucet, inline water-filter
+   housings, and a touch control panel.
+2. **Cartridges as inverted metal bottles** (6–8 visible) docked mouth-down in
+   a drawer rack, with labels like "Sparkling Water / Cold Brew / Cucumber
+   Lime / Still Water."
+3. **A 12-position rack of small flavor pucks** plus what appears to be a
+   **CO₂ cylinder** and filter canisters.
+
+**What this confirms about Phase 1:**
+
+- The fixed **rack + drawer** layout in the renders settles the carousel vs.
+  gantry question in favor of **fixed cartridge rack** — either a traveling
+  drive head (gantry) or, better for a drawer, **one small drive/valve module
+  per docking station fed by a single shared controller** re-evaluated in
+  Phase 2 against cost.
+- Inverted bottle-style cartridges docking mouth-down onto a station is
+  exactly Architecture B's smart-cartridge docking concept. The metering
+  element lives in the bottle's neck/cap assembly.
+- 10–12 positions matches the agreed "up to 10" envelope.
+
+**What this changes / adds (scope decisions needed):**
+
+| Render feature | Implication | Decision needed |
+|---|---|---|
+| Plumbed water line + tap | This is a **point-of-use water dispenser that doses formula into the water stream**, not a device dosing into an arbitrary glass. Dispense path becomes an inline injection manifold; the "drop funnel" becomes a tap spout. Installation now involves a plumber or a tank-fed fallback. | In or out for v1? Plumbed-in roughly doubles regulatory surface (NSF/ANSI 42/53/61 for the water path) and kills "on-the-go." |
+| Under-counter drawer form factor | Sheet-metal chassis + drawer slides instead of a molded countertop enclosure; changes Phase 2 CAD entirely. Conflicts with the stated "countertop, on-the-go" use context. | Countertop v1 with the same cartridge/docking system, drawer version as v2? (Recommended — the cartridge platform is the asset; the enclosure can vary.) |
+| CO₂ cylinder / sparkling | Carbonation module: regulator, carbonator, certified cylinder handling. Big, well-understood, but a product in itself. | Recommend **out of v1**; the docking rack design will not preclude adding it later. |
+| Chilled water ("Cold Brew," temperature display) | Water chilling is different from formula refrigeration (§3 stands: cartridges stay ambient). A thermoelectric water chiller is feasible in a plumbed v2. | Defer with plumbing decision. |
+| Metal bottle cartridges | Aluminum bottles are premium-looking but fight Architecture B: molded metering elements, NFC tags, and collapsible liners integrate far more cheaply into a **molded PP/PET shell** (which can be metallized or sleeved for the same look). | Treat metal look as industrial design finish, not construction. |
+
+**Recommended v1 scope, restated:** countertop enclosure, 10-position fixed
+rack of smart cartridges (Architecture B), doses into the user's own glass/
+bottle of water via a short shared spout, load-cell verification underneath.
+Plumbing, carbonation, and water chilling are v2 features the docking
+architecture deliberately leaves room for.
+
+---
+
 **⏸ STOP — awaiting founder sign-off on:**
 1. Architecture B (+ load-cell verification) as the mechanism direction
 2. Dose envelope classes P1/P2/L1/L2 (§2) and the formula limits
 3. Ambient-only storage strategy (§3)
 4. Launch cartridge set (P2 + L2 first)
+5. v1 scope from §6: countertop + dose-into-glass now; plumbed/sparkling/chilled drawer version as v2
