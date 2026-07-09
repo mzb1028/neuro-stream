@@ -178,9 +178,41 @@ subtotal is consistent with a $400–700 retail device at standard multipliers.)
 
 ---
 
-**⏸ STOP — awaiting founder sign-off on:**
-1. ESP32-S3 as the MCU (implies app + OTA as product features)
-2. Mains-only power (battery formally dropped for v1)
-3. The error-handling behaviors in §3.5 (these become UX copy)
-4. 2.8" touchscreen vs. cheaper knob+ring-LED UI (−$6 BOM if downgraded)
-5. Then → Phase 4: materials & food-safety compliance
+**✅ SIGNED OFF by founder (2026-07-09), with amendments:**
+1. ESP32-S3 — **approved**, with expanded connected-product requirements (§6)
+2. Mains-only — **approved**
+3. Error-handling matrix — **approved**, plus offline-first requirement (§6.3)
+4. Touchscreen — **approved** (2.8" IPS capacitive)
+
+## 6. AMENDMENT — Connected-product requirements (founder, 2026-07-09)
+
+### 6.1 Auto-reorder
+The NFC dose counter already gives per-cartridge remaining servings. Cloud
+service adds: low-cartridge event at ≤3 servings → touchscreen + push prompt
+("Running low on <name> — reorder?") → one-tap confirm against the stored
+subscription. Fully hardware-free; requires the commerce backend (flagged as
+a software-team deliverable, not in device BOM).
+
+### 6.2 Wearable integration
+Architecture: the **phone app** is the health-data bridge — it reads Apple
+HealthKit / Google Health Connect / Garmin / Whoop / Oura APIs and computes
+recipe suggestions (e.g., post-run → electrolyte-forward blend, hydration
+deficit → larger water volume), which sync to the machine over Wi-Fi/BLE.
+The machine itself never talks to wearables directly (no watch vendor allows
+third-party devices as direct peers; the phone-bridge is the standard and
+correct pattern). No hardware impact; ESP32-S3 BLE also enables direct
+phone-to-machine control when offline.
+
+**Regulatory guardrail (carries into Phases 4/6):** health-data-driven dosing
+must be presented as *wellness suggestions the user confirms*, never as
+automatic therapeutic dosing — otherwise the product risks classification as
+a medical device (FDA SaMD). UX copy and marketing must respect this line.
+
+### 6.3 Offline-first (no phone nearby)
+The touchscreen is a full-fidelity controller: profiles, saved recipes,
+manual dose/temperature/volume, cartridge status, and error recovery all work
+with no phone and no internet. Cloud features degrade gracefully (reorder
+prompts queue; wearable suggestions simply absent). Firmware rule: **no
+dispense path may ever require network round-trips.**
+
+**→ Phase 4: materials & food-safety compliance** (see `docs/phase4-materials-food-safety.md`)

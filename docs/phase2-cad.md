@@ -81,7 +81,7 @@ openscad -o out.png --imgsize=1200,900 --camera=0,0,230,65,0,35,1500 \
 | Internal deck plate | 1 | **Sheet metal** (1.5 mm galv.) | Flat + stiff + cheap at launch volume; convert to a 3rd molding above ~20k units/yr |
 | Carousel plate w/ molded ring gear | 1 | **Injection mold** (30% GF-PP) | Molded gear is fine — cone does final location |
 | Docking cone | 1 | **Injection mold** (GF-PP) | |
-| Drive spline shaft (annular crown) | 1 | **CNC** (303 SS) | The one precision machined part; product falls through its centre, torque enters around it |
+| Drive spline shaft (annular crown) | 1 | **CNC** (316L SS — Phase 4 correction) | The one precision machined part; product falls through its centre, torque enters around it |
 | Drop funnel | 1 | **Injection mold** (Tritan) | Only user-washed food-contact part; twist-lock, dishwasher-safe |
 | Weigh platform / drip tray | 2 | **Injection mold** (ABS / PP) | |
 | Lid | 1 | **Injection mold** (clear PC) | |

@@ -144,7 +144,7 @@ function exz(mm) = ex * mm;   // axial explode helper
 // ============================================================================
 
 // ---- 6-lobe spline (male shaft / female socket via `clr`) -------------------
-// [CNC] machine-side shaft: 303 SS, machined + tumbled. This is the highest-
+// [CNC] machine-side shaft: 316L SS, machined + tumbled (Phase 4: 303 rejected — sulfur content). This is the highest-
 // precision metal part in the machine; everything else forgives.
 // [IM] cartridge-side socket: molded into the POM metering element.
 module spline(male=true, clr=0) {
@@ -246,7 +246,7 @@ module carousel() {
 }
 
 // ---- Docking cone + drive station (at the front/dispense position) -----------
-// Cone [IM GF-PP], spline shaft [CNC 303 SS], lift cam + spring [OTS],
+// Cone [IM GF-PP], spline shaft [CNC 316L SS], lift cam + spring [OTS],
 // drive stepper+gearbox [OTS NEMA17 1:5]. The cone captures a mis-positioned
 // neck (±2.5 mm) and centres it; the spring-loaded spline then rises
 // drive_travel mm and self-clocks into the socket within one motor turn.
@@ -394,7 +394,7 @@ else
 // ============================================================================
 // PART → PROCESS SUMMARY (detail table in docs/phase2-cad.md)
 //   Machine:  chassis shells [IM ABS], deck [SM], carousel [IM GF-PP],
-//             docking cone [IM GF-PP], spline shaft [CNC 303SS],
+//             docking cone [IM GF-PP], spline shaft [CNC 316L SS],
 //             funnel [IM Tritan], platform/drip tray [IM],
 //             steppers, gearbox, load cell, bearings, NFC reader [OTS]
 //   Powder cartridge (7 pts): shell+neck [IM PP], screw+agitator [IM POM],
