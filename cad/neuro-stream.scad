@@ -27,6 +27,7 @@ show_cartridges= true;   // one powder + one syrup cartridge shown docked
 show_drive     = true;
 show_dispense  = true;   // funnel, load-cell platform, drip tray
 show_lid       = true;
+show_water     = true;   // tank, pump, heater, venturi mixing manifold
 
 $fn = 64;                // curve resolution (raise for exports)
 
@@ -112,6 +113,24 @@ funnel_bot_d    = 14;
 funnel_h         = 38;
 loadcell_l       = 55;    // [OTS] 1 kg single-point load cell (TAL221-class)
 platform_d       = 95;    // [IM] weighing platform / drip tray top
+
+// ---- Water / heating / mixing subsystem (founder-approved 2026-07-09) ---------
+// Tank lives in the dead space inside the carousel ring: zero footprint cost.
+tank_d           = 140;   // [IM] removable tank, Ø140 × 250 ≈ 3.5 L usable
+tank_h           = 250;
+tank_wall        = 2.0;   // Tritan (clear, tough, dishwasher-safe)
+pump_l           = 55;    // [OTS] diaphragm pump body length (base compartment)
+heater_l         = 90;    // [OTS] inline thick-film heater, 1200 W
+heater_d         = 32;
+tube_d           = 8;     // silicone water line, 8 mm OD
+// TOLERANCE: tank-to-base water coupling uses a spring poppet + EPDM O-ring;
+// coupling bore +0.1/-0 on a Ø14 spigot — sealing comes from the O-ring
+// squeeze (25% nominal), not the bore fit, so molding variation is absorbed.
+venturi_l        = 34;    // [IM Tritan] mixing manifold: heated water enters
+venturi_d        = 22;    //   tangentially, product drops in from the cone
+                          //   above, swirl + venturi throat dissolves powder
+                          //   in-stream before the spout. Removable for wash.
+spout_d          = 10;
 
 // ---- Lid ----------------------------------------------------------------------
 lid_h            = 24;    // [IM] hinged translucent lid over cartridge deck
@@ -220,7 +239,9 @@ module carousel() {
         for (i=[0:n_stations-1])
             rotate(i*360/n_stations)
                 translate([pitch_r,0,-5]) cylinder(d=station_bore, h=carousel_t+10);
-        cylinder(d=25, h=30, center=true);   // centre hub bore
+        // centre opening: carousel is a RING around the fixed water tank,
+        // driven at the rim gear (rim drive is why the middle can be empty)
+        cylinder(d=tank_d+8, h=40, center=true);
     }
 }
 
@@ -273,15 +294,48 @@ module chassis() {
             cylinder(r=base_r-6, h=3);
             translate([pitch_r,0,-1]) cylinder(d=cone_big_d+2, h=6);
         }
-    // centre column & carousel bearing boss
-    color("Gainsboro") translate([0,0,deck_h]) cylinder(d=24, h=14);
+    // tank seat boss with poppet coupling at deck centre
+    color("Gainsboro") translate([0,0,deck_h]) cylinder(d=tank_d-10, h=6);
+}
+
+// ---- Water / heating / mixing subsystem ------------------------------------------
+// Tank [IM Tritan ×2 + OTS poppet valve], pump [OTS], inline heater [OTS],
+// flow meter [OTS], venturi manifold [IM Tritan, user-removable].
+// Water path: tank → poppet → pump → flow meter → 1200 W thick-film heater
+// (PID, NTC at outlet) → tangential inlet of venturi manifold, where the
+// dosed ingredient stream from the docking cone drops into the swirl.
+// ±2 °F at spout = PID on heater power against measured flow (Phase 3).
+module water_system() {
+    // removable tank in the carousel centre
+    color("LightCyan", 0.5) translate([0,0,deck_h+6+exz(120)])
+        difference() {
+            cylinder(d=tank_d, h=tank_h);
+            translate([0,0,tank_wall]) cylinder(d=tank_d-2*tank_wall, h=tank_h);
+        }
+    // pump + heater in the base compartment (rear, opposite dispense bay)
+    color("DarkSeaGreen") translate([-pitch_r-10, -20+exz(-50), base_wall+8])
+        cube([pump_l, 40, 40]);                               // pump [OTS]
+    color("Tomato") rotate(25) translate([-pitch_r+20, 30+exz(50), base_wall+8])
+        rotate([0,90,0]) cylinder(d=heater_d, h=heater_l);    // heater [OTS]
+    // water line from heater to venturi (routed under deck; shown direct)
+    color("SlateGray") translate([-pitch_r+40, 0, base_wall+30+exz(-15)])
+        rotate([0,90,0]) cylinder(d=tube_d, h=2*pitch_r-40);
+    // venturi mixing manifold hanging under the docking cone, above the glass
+    color("MediumAquamarine", 0.8)
+        translate([pitch_r, 0, deck_h-30-venturi_l-2-exz(75)]) {
+            cylinder(d=venturi_d+8, h=venturi_l);             // swirl body
+            translate([0,0,-10]) cylinder(d=spout_d, h=12);   // spout
+            rotate([0,90,90]) translate([-venturi_l+12,0,0])
+                cylinder(d=tube_d, h=26);                     // tangential inlet
+        }
 }
 
 // ---- Dispense bay: funnel, load-cell platform, drip tray ------------------------
 module dispense_bay() {
-    // shared drop funnel [IM Tritan] — the ONLY user-washed food-contact part.
-    // Twist-lock, no tools; survives 1000+ dishwasher cycles.
-    color("LightSteelBlue", 0.7)
+    // Drop funnel [IM Tritan] — used only in the dry (no-water) build variant;
+    // with show_water the venturi manifold takes its place as the single
+    // user-washed food-contact part (twist-lock, dishwasher-safe).
+    if (!show_water) color("LightSteelBlue", 0.7)
         translate([pitch_r, 0, deck_h - 30 - funnel_h - 4 - exz(55)])
             difference() {
                 cylinder(d1=funnel_bot_d+4, d2=funnel_top_d, h=funnel_h);
@@ -329,6 +383,7 @@ module assembly() {
                 cartridge_syrup();
     }
     if (show_lid) lid();
+    if (show_water) water_system();
 }
 
 if (cross_section)

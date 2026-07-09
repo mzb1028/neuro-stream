@@ -132,9 +132,36 @@ openscad -o out.png --imgsize=1200,900 --camera=0,0,230,65,0,35,1500 \
 
 ---
 
-**⏸ STOP — awaiting founder sign-off on:**
-1. Carousel layout (vs. traveling drive head) for countertop v1
-2. Machine envelope: Ø~440 × ~465 mm at 10 stations (or choose the 6-station compact)
-3. Cartridge envelope Ø80 × 220 mm (≈1 L) and the neck/spline docking interface
-4. Stirring decision (§6.1 — recommend "user stirs" for v1)
-5. Then → Phase 3: electronics & firmware
+## 7. AMENDMENT — Water / heating / mixing subsystem (founder-approved 2026-07-09)
+
+Founder decision: v1 must dissolve powders and incorporate liquids properly,
+and must deliver water at a user-set temperature within **±2 °F**. Scope
+change adopted: v1 gains a **tank-fed hot-water system with in-stream venturi
+mixing** (this supersedes the "user stirs" recommendation in §6.1).
+
+**Architecture** (now in the parametric model, `show_water=true`):
+
+- **Removable ~3.5 L Tritan tank in the dead centre of the carousel ring** —
+  the carousel is rim-driven, so its middle is empty; the tank lives there and
+  lifts out through the lid. Machine footprint is unchanged.
+- Water path: tank → poppet coupling → diaphragm pump → hall flow meter →
+  **1200 W inline thick-film heater** (PID against outlet NTC + measured
+  flow) → tangential inlet of the **venturi/swirl mixing manifold** mounted
+  under the docking cone. Dosed ingredients drop from the cartridge outlet
+  directly into the swirling heated stream and dissolve in-line before the
+  spout. The manifold replaces the drop funnel as the single user-removable,
+  dishwasher-safe food-contact part.
+- **±2 °F at spout** is a firmware deliverable (Phase 3 PID + feed-forward on
+  flow); heater-only system heats from tank temperature up to ~205 °F —
+  chilling remains a v2 feature.
+- Consequences accepted: mains-only power (1200 W kills battery), UL
+  heating-appliance certification path (+$15–30k, +2–3 months), NSF/ANSI 42
+  attention on the water path, descaling routine, added BOM ~$30–45.
+
+**Sign-off status:** carousel layout, 10-station envelope, and Ø80×220
+cartridge confirmed by founder ("go forward", 2026-07-09) together with this
+subsystem. Mixing decision resolved: **venturi in-stream mixing** (no stirrer).
+
+---
+
+**→ Phase 3: electronics & firmware** (see `docs/phase3-electronics-firmware.md`)
