@@ -328,9 +328,22 @@ architecture deliberately leaves room for.
 
 ---
 
-**⏸ STOP — awaiting founder sign-off on:**
-1. Architecture B (+ load-cell verification) as the mechanism direction
-2. Dose envelope classes P1/P2/L1/L2 (§2) and the formula limits
-3. Ambient-only storage strategy (§3)
-4. Launch cartridge set (P2 + L2 first)
-5. v1 scope from §6: countertop + dose-into-glass now; plumbed/sparkling/chilled drawer version as v2
+**✅ SIGNED OFF by founder (2026-07-09), with amendments:**
+1. Architecture B (+ load-cell verification) — **approved**
+2. Dose envelope classes P1/P2/L1/L2 (§2) — **approved** (clarified: these are
+   per-serving dispense ranges, not cartridge sizes; cartridges remain 1 L)
+3. Ambient-only storage — **approved with condition: all ingredients are
+   preservative-free.** Consequences adopted:
+   - Powders: unaffected (dry + desiccant + foil seal is sufficient).
+   - Liquids: **sterile-fill into a collapsible aseptic bag with a one-way
+     check valve** is the mandatory packaging standard. In-use life per
+     formula must be validated in Phase 6; thin aqueous liquids may carry a
+     shorter machine-enforced expiry (read from the cartridge tag).
+4. Launch cartridge set P2 powder + L2 syrup — **approved**
+5. v1 scope (countertop, dose-into-glass; plumbed drawer = v2) — **approved**
+
+**Added requirement (founder, 2026-07-09):** one serving may combine **up to
+4 ingredients** (any mix of powders and liquids). Implemented as sequential
+dispensing of up to 4 cartridges into the shared funnel per recipe. Whether
+the machine also *stirs* the finished drink is flagged as an open industrial-
+design decision in the Phase 2 document (recommendation: user stirs in v1).
