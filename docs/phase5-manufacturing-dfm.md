@@ -61,6 +61,47 @@ at 10,000 it can hit $449.** The single biggest lever is volume on the molded
 parts and electronics. (These are estimate-grade numbers, ±15%, for deciding
 strategy — real quotes come from the CMs below.)
 
+### 2.1 Small-batch costing (100–1,500 units) — a different world
+
+Below ~2,000 units, steel injection molds ($300k+) make no financial sense.
+Small batches are built a different way, and the per-machine price reflects it:
+
+- **100–500 units:** enclosure and large plastics are **3D-printed (industrial
+  MJF/SLS) or CNC-machined**, assembled by hand, mostly domestically. No big
+  tooling bill — but each machine costs several times more to build.
+- **500–1,500 units:** **"soft" aluminum molds** (cheaper, slower, wear out
+  after ~10–50k parts) for the big plastics: ~40% of the steel-tool price,
+  higher per-part cost.
+- **Cartridges are the exception at every volume:** food-contact parts cannot
+  be 3D printed to spec, so the cartridge needs real (soft) molds from day
+  one: **~$50–65k minimum**, unavoidable even for a 100-unit pilot.
+
+| Units built | How it's built | Build cost per machine | One-time costs (tools, fixtures) | What this run is for |
+|---|---|---|---|---|
+| **100** | 3D print + CNC, hand-built | ≈ $1,250 | ≈ $95k (cartridge soft molds + fixtures) | Beta/pilot program — do NOT retail; field-test with real users |
+| **200** | same | ≈ $1,000 | ≈ $95k | Extended beta, press/investor units |
+| **500** | soft molds for big parts | ≈ $430 | ≈ $150k | First sellable run, early-adopter pricing |
+| **750** | soft molds | ≈ $385 | ≈ $150k | |
+| **1,000** | soft molds | ≈ $345 | ≈ $155k | Realistic retail ~$799–899, or ~$699 at thin margin |
+| **1,500** | soft molds, partial line assembly | ≈ $300 | ≈ $160k | Bridge run while steel tools are cut |
+| *2,000+* | *steel molds (see table above)* | *$188 →* | *$300–340k* | *Real production economics begin* |
+
+Plain-English read:
+
+- **100–200 machines is a beta program, not a business.** At ~$1,000+ each
+  plus ~$95k in setup, these units exist to prove the product with real users
+  before you spend mold money. Standard playbook: build 100–200, learn,
+  *then* commit tooling. Skipping certification is allowed only if units are
+  loaned, not sold.
+- **500–1,500 is the "early adopter" zone:** sellable, but the machine must
+  retail at $699–899 to not lose money, and safety certification (~$35–55k)
+  now applies in full — it doesn't shrink with volume, so at 500 units it
+  alone adds ~$90 per machine.
+- The smart sequence most hardware companies use: **150-unit beta (printed) →
+  1,000–1,500 bridge run (soft molds) → steel tooling once demand is proven.**
+  The soft molds aren't wasted money — they carry you while the steel tools
+  are cut, and the cartridge soft molds are needed at every volume anyway.
+
 ### Cartridge cost (the recurring item)
 
 | Per filled-ready empty cartridge | 50k/yr | 250k/yr | 500k/yr |
