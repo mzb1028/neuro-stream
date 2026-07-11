@@ -68,6 +68,10 @@ comment will be updated when the model is next touched.
 
 ## 3. Cleaning & sanitation design requirements
 
+> **SUPERSEDED in part by §5 (founder-approved self-cleaning model,
+> 2026-07-09).** The design rules at the end of this section still apply;
+> the user-facing regimen table is replaced by §5.
+
 The design's core sanitation argument: **every formula's wetted path is
 disposable** (lives in the cartridge, replaced ~monthly), and the shared path
 is exactly two things — the venturi manifold and the spout.
@@ -94,12 +98,45 @@ Design rules locked by this phase:
 
 ---
 
-**⏸ STOP — awaiting founder sign-off on:**
-1. The materials table (§1) as the sourcing spec — notably Tritan for
-   tank/venturi, PP/POM/LSR cartridge stack, 316L correction
-2. Certification budget/path (§2): UL 60335-2-15 + FCC + NSF/ANSI 42 voluntary,
-   consultant-reviewed FDA compliance file, **21 CFR 111 co-packer** for filling
-3. The cleaning regimen (§3) as manual/app copy and its firmware hooks
-   (manifold-missing interlock, descale counter)
-4. Then → Phase 5: manufacturing & DFM spec (needs your target launch volume —
-   units for year 1 — to price the BOM properly)
+## 5. AMENDMENT — Self-cleaning model (founder-approved 2026-07-09)
+
+Founder requirement: **the user should never have to clean the machine.**
+Adopted design:
+
+- **11 carousel slots** (was 10): 10 ingredient cartridges + **1 dedicated
+  slot for a cleaning cartridge**. Machine grows to Ø~47 cm.
+- **Cleaning cartridge SKU** (3rd cartridge type): same body/neck/tag as
+  ingredient cartridges; two chambers — food-safe detergent/sanitizer
+  concentrate + citric-acid descaler. Ships in every subscription box.
+  Machine reads the tag, knows when cleaning last ran, and prompts.
+- **Overnight self-clean cycle** (~30 min, scheduled by user, runs unattended):
+  hot detergent flush of venturi/spout/water path → soak → descale stage when
+  needed → triple rinse. Effluent (~1–1.5 L) exits the normal spout into a
+  **user-placed container that the load cell verifies is present and large
+  enough before the cycle will start**. (Direct sink drain is a v2
+  under-counter feature.)
+- **Water-tank filter cartridge** (Brita-class, ~$2 BOM + consumable):
+  cuts scale, stretches descale interval, improves taste.
+- **Conductivity sensor** (~$1 BOM): measures actual water hardness so
+  descaling is scheduled by need, not calendar.
+- Residual user tasks: place a container the night a clean runs; rinse the
+  drip tray occasionally. Everything else is automatic (including the 20 mL
+  hot rinse after every serving).
+- Firmware additions (annexed to Phase 3 spec): cleaning-cycle state machine,
+  container-mass check, hardness-based descale scheduler, cleaning-cartridge
+  tag handling, "won't dispense while cleaning-overdue > 2 weeks" nag policy.
+
+---
+
+**✅ SIGN-OFF STATUS (in the simplest terms):**
+
+1. **The plastics and metals list (§1)** — which exact materials touch your
+   formula and water. All of them are the kinds the FDA already recognizes
+   for food use. **← needs your yes**
+2. **The safety-testing plan and budget (§2)** — the machine gets tested by a
+   safety lab (required because it heats water), the Wi-Fi gets registered,
+   and cartridge filling is done by a company already licensed to make
+   supplements. Total certification budget roughly $35–55k. **← needs your yes**
+3. **Self-cleaning model (§5)** — **approved by you** (11 slots, cleaning
+   cartridge, overnight cycle, tank filter, hardness sensor).
+4. Then → Phase 5: manufacturing plan and tiered pricing.

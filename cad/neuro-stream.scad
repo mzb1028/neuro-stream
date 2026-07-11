@@ -59,8 +59,10 @@ spline_clr       = 0.15;  // TOLERANCE: fit clearance between molded POM socket
 spline_lead_in   = 2;     // chamfer so blind docking self-aligns
 
 // ---- Carousel & station geometry -------------------------------------------
-n_stations       = 10;    // cartridge count. Set 6 for a compact SKU —
-                          // everything below re-derives automatically.
+n_stations       = 11;    // FOUNDER-APPROVED 2026-07-09: 11 slots =
+                          // 10 ingredient cartridges + 1 dedicated slot for
+                          // the self-cleaning cartridge. Set 6 for a compact
+                          // SKU — everything below re-derives automatically.
 station_gap      = 15;    // clearance between adjacent cartridge bodies
 pitch_c          = n_stations * (cart_od + station_gap);   // pitch circumference
 pitch_r          = pitch_c / (2 * PI);                     // station pitch radius
