@@ -116,9 +116,7 @@ science, legal, and NSF).
 | 3 — Electronics & firmware | ESP32-S3, ±2 °F control, error matrix | ✅ signed off (+connected-product amendments) |
 | 4 — Materials & food safety | 21 CFR 177 sourcing spec, self-clean model | ✅ signed off |
 | 5 — Manufacturing & pricing | DFM, tooling, tiers from MVP to 10k units | ✅ signed off (path a: MVP → beta → scale) |
-| 6 — Validation & testing | This document | **← needs your final yes** |
+| 6 — Validation & testing | This document | ✅ signed off |
 
-**Final sign-off (simple version):** do you approve this testing plan — the
-dosing tests, the freshness tests, the certificate checklist, and the
-gates between MVP → beta → sales run → scale? Say yes (or ask for changes)
-and the engineering program is complete and handoff-ready.
+**✅ APPROVED by founder 2026-07-10. All six phases signed off — the
+engineering program is complete and this repository is the handoff package.**
