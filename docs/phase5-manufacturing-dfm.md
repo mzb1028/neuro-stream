@@ -102,6 +102,24 @@ Plain-English read:
   The soft molds aren't wasted money — they carry you while the steel tools
   are cut, and the cartridge soft molds are needed at every volume anyway.
 
+### 2.2 MVP cost (before any of the above)
+
+An MVP here means: **a machine that proves the four risky claims** — doses
+within ±2%, docks/reads smart cartridges, hits temperature within ±2 °F, and
+dissolves powder in-stream — in front of you, users, and investors. It does
+not need to be pretty, certified, or food-safe yet.
+
+| Stage | What it is | What it costs |
+|---|---|---|
+| **Bench MVP** (1 unit) | Ugly but working: 3D-printed frame and cartridges, off-the-shelf pump/heater/motors, dev-board electronics, basic touchscreen UI. Proves dosing, heating, mixing, docking on a bench. | **$15–25k** in parts/fabrication + engineering labor below |
+| **Engineering labor for bench MVP** | 1 mechanical + 1 firmware engineer, ~3–4 months (contract) — or ~$0 if you have technical co-founders | **$40–80k** contracted; $0–20k with sweat equity |
+| **Looks-like / works-like prototypes** (3–5 units) | Real enclosure finish, integrated PCB (not dev boards), app demo. What you show retailers and investors, and what the safety lab pre-reviews. | **$60–110k** including design labor |
+| **Realistic total: idea → demonstrable MVP** | | **≈ $55–105k** (bench only) / **≈ $130–210k** (through polished prototypes) |
+
+Sequence with the tiers above: **MVP ($55–105k) → 150-unit beta (~$220k) →
+1,000–1,500 soft-mold bridge run → steel tooling at 5k+.** Each stage is a
+go/no-go gate before the next check is written.
+
 ### Cartridge cost (the recurring item)
 
 | Per filled-ready empty cartridge | 50k/yr | 250k/yr | 500k/yr |
