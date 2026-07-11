@@ -130,13 +130,10 @@ Adopted design:
 
 **✅ SIGN-OFF STATUS (in the simplest terms):**
 
-1. **The plastics and metals list (§1)** — which exact materials touch your
-   formula and water. All of them are the kinds the FDA already recognizes
-   for food use. **← needs your yes**
-2. **The safety-testing plan and budget (§2)** — the machine gets tested by a
-   safety lab (required because it heats water), the Wi-Fi gets registered,
-   and cartridge filling is done by a company already licensed to make
-   supplements. Total certification budget roughly $35–55k. **← needs your yes**
-3. **Self-cleaning model (§5)** — **approved by you** (11 slots, cleaning
-   cartridge, overnight cycle, tank filter, hardness sensor).
-4. Then → Phase 5: manufacturing plan and tiered pricing.
+1. **The plastics and metals list (§1)** — **approved by founder 2026-07-10**
+2. **The safety-testing plan and budget (§2, ~$35–55k)** — **approved by
+   founder 2026-07-10**
+3. **Self-cleaning model (§5)** — **approved by founder 2026-07-09** (11
+   slots, cleaning cartridge, overnight cycle, tank filter, hardness sensor)
+4. → Phase 5: manufacturing plan and tiered pricing. **Volume path approved
+   2026-07-10: MVP → 150-unit beta → scale.**
