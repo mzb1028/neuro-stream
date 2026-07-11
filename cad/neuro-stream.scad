@@ -28,6 +28,8 @@ show_drive     = true;
 show_dispense  = true;   // funnel, load-cell platform, drip tray
 show_lid       = true;
 show_water     = true;   // tank, pump, heater, venturi mixing manifold
+lid_open       = 0;      // 0 = closed … 75 = flipped open on rear hinge (deg)
+show_screen    = true;   // 2.8" touchscreen on the front face
 
 $fn = 64;                // curve resolution (raise for exports)
 
@@ -358,13 +360,30 @@ module dispense_bay() {
 }
 
 // ---- Lid ------------------------------------------------------------------------
+// Hinged at the REAR edge (opposite the dispense bay). One hand lifts it ~75°;
+// gas strut (OTS) holds it open while cartridges are swapped from above.
+module lid_geom() {
+    color("WhiteSmoke", 0.35) difference() {
+        cylinder(r1=base_r-4, r2=base_r-30, h=lid_h);
+        translate([0,0,-2]) cylinder(r1=base_r-4-2.5, r2=base_r-32, h=lid_h);
+    }
+    // hinge barrel at rear
+    color("Gainsboro") translate([-(base_r-10),0,2]) rotate([90,0,0])
+        cylinder(d=10, h=60, center=true);
+}
 module lid() {
-    color("WhiteSmoke", 0.35)
-        translate([0,0,deck_h + carousel_t + cart_h + 6 + exz(90)])
-            difference() {
-                cylinder(r1=base_r-4, r2=base_r-30, h=lid_h);
-                translate([0,0,-2]) cylinder(r1=base_r-4-2.5, r2=base_r-32, h=lid_h);
-            }
+    z = deck_h + carousel_t + cart_h + 6 + exz(90);
+    translate([-(base_r-10),0,z]) rotate([0,-lid_open,0]) translate([base_r-10,0,0])
+        lid_geom();
+}
+
+// ---- Touchscreen (2.8" IPS, capacitive) -------------------------------------------
+// Angled 20° toward the user on the front face, above the dispense bay.
+module touchscreen() {
+    translate([base_r-14, 0, deck_h-38]) rotate([0,-20,0]) {
+        color([0.08,0.09,0.11]) cube([4, 62, 46], center=true);        // glass
+        color("Black") translate([2.2,0,0]) cube([1, 52, 38], center=true); // active area
+    }
 }
 
 // ============================================================================
@@ -386,6 +405,7 @@ module assembly() {
     }
     if (show_lid) lid();
     if (show_water) water_system();
+    if (show_screen) touchscreen();
 }
 
 if (cross_section)
