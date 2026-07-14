@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 760" font-family="ui-monospace, SF Mono, Menlo, Consolas, monospace">
+  <rect width="1240" height="760" fill="#FBFCFC"/>
+  <text x="50" y="52" font-size="26" font-weight="700" fill="#1B2731" font-family="system-ui,sans-serif">MVP plumbing diagram</text>
+  <text x="50" y="78" font-size="14" fill="#5D6C75" font-family="system-ui,sans-serif">All tube: platinum-cured silicone, 8 mm OD × 5 mm ID, food grade, rated 200 °C. Fittings: stainless or PP barbs + food-safe clamps.</text>
+
+  <!-- TANK -->
+  <rect x="70" y="130" width="150" height="200" rx="10" fill="#DFF0EE" stroke="#0E8C7F" stroke-width="2.5"/>
+  <text x="145" y="215" font-size="14" font-weight="700" text-anchor="middle" fill="#0A6B61">TANK</text>
+  <text x="145" y="235" font-size="12" text-anchor="middle" fill="#0A6B61">bench: any 2 L</text>
+  <text x="145" y="251" font-size="12" text-anchor="middle" fill="#0A6B61">food container</text>
+  <text x="145" y="300" font-size="11" text-anchor="middle" fill="#5D6C75">outlet at bottom</text>
+
+  <!-- check valve -->
+  <g transform="translate(250,315)">
+    <polygon points="0,-12 22,0 0,12" fill="#fff" stroke="#1B2731" stroke-width="2"/>
+    <line x1="22" y1="-12" x2="22" y2="12" stroke="#1B2731" stroke-width="2"/>
+  </g>
+  <text x="261" y="352" font-size="11" text-anchor="middle" fill="#5D6C75">check valve</text>
+  <text x="261" y="366" font-size="11" text-anchor="middle" fill="#5D6C75">(keeps pump primed)</text>
+
+  <!-- PUMP -->
+  <circle cx="370" cy="315" r="38" fill="#CDE3C8" stroke="#4E7D46" stroke-width="2.5"/>
+  <text x="370" y="311" font-size="13" font-weight="700" text-anchor="middle" fill="#3A6134">PUMP</text>
+  <text x="370" y="328" font-size="10.5" text-anchor="middle" fill="#3A6134">12 V diaphragm</text>
+  <text x="370" y="375" font-size="11" text-anchor="middle" fill="#5D6C75">food/potable rated</text>
+  <text x="370" y="389" font-size="11" text-anchor="middle" fill="#5D6C75">~0.5 L/min working</text>
+
+  <!-- FLOW METER -->
+  <rect x="460" y="290" width="110" height="50" rx="8" fill="#fff" stroke="#3D6B99" stroke-width="2"/>
+  <text x="515" y="311" font-size="12" font-weight="700" text-anchor="middle" fill="#2B4D70">FLOW METER</text>
+  <text x="515" y="327" font-size="11" text-anchor="middle" fill="#5D6C75">YF-S402B, pulse</text>
+
+  <!-- HEATER -->
+  <rect x="620" y="285" width="170" height="60" rx="8" fill="#F6CFC5" stroke="#B44A3C" stroke-width="2.5"/>
+  <text x="705" y="308" font-size="13" font-weight="700" text-anchor="middle" fill="#8F3327">INLINE HEATER 1200 W</text>
+  <text x="705" y="326" font-size="11" text-anchor="middle" fill="#8F3327">316L wetted · body NTC clamped</text>
+  <text x="705" y="368" font-size="11" text-anchor="middle" fill="#B44A3C">first tests: BYPASS with plain tube (cold water)</text>
+
+  <!-- NTC TEE -->
+  <rect x="840" y="292" width="70" height="46" rx="8" fill="#fff" stroke="#3D6B99" stroke-width="2"/>
+  <text x="875" y="311" font-size="11" font-weight="700" text-anchor="middle" fill="#2B4D70">NTC TEE</text>
+  <text x="875" y="326" font-size="10.5" text-anchor="middle" fill="#5D6C75">spout temp</text>
+
+  <!-- MIXING MANIFOLD -->
+  <g transform="translate(985,240)">
+    <path d="M0 60 L120 60 L78 130 L42 130 Z" fill="#BFE8E2" stroke="#0E8C7F" stroke-width="2.5"/>
+    <rect x="42" y="130" width="36" height="30" fill="#BFE8E2" stroke="#0E8C7F" stroke-width="2.5"/>
+    <rect x="46" y="160" width="28" height="18" fill="#BFE8E2" stroke="#0E8C7F" stroke-width="2.5"/>
+    <text x="60" y="98" font-size="11" font-weight="700" text-anchor="middle" fill="#0A6B61">MIXING</text>
+    <text x="60" y="112" font-size="11" font-weight="700" text-anchor="middle" fill="#0A6B61">CONE</text>
+    <!-- tangential inlet stub -->
+    <rect x="-18" y="66" width="24" height="12" fill="#fff" stroke="#0E8C7F" stroke-width="2"/>
+    <text x="60" y="46" font-size="10.5" text-anchor="middle" fill="#5D6C75">water enters tangentially (off-center!)</text>
+  </g>
+
+  <!-- CARTRIDGE above manifold -->
+  <rect x="1010" y="105" width="70" height="115" rx="9" fill="#fff" stroke="#1B2731" stroke-width="2.5"/>
+  <rect x="1032" y="220" width="26" height="18" fill="#fff" stroke="#1B2731" stroke-width="2.5"/>
+  <text x="1045" y="150" font-size="11" text-anchor="middle" fill="#1B2731">CARTRIDGE</text>
+  <text x="1045" y="165" font-size="10.5" text-anchor="middle" fill="#5D6C75">held in dock</text>
+  <text x="1045" y="180" font-size="10.5" text-anchor="middle" fill="#5D6C75">above cone</text>
+  <path d="M1045 238 L1045 258" stroke="#B44A3C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1038 250 L1045 260 L1052 250" fill="none" stroke="#B44A3C" stroke-width="3.5"/>
+  <text x="1115" y="252" font-size="10.5" fill="#B44A3C">dose drops in dry</text>
+
+  <!-- GLASS + SCALE -->
+  <path d="M1015 460 L1075 460 L1068 560 L1022 560 Z" fill="#fff" stroke="#1B2731" stroke-width="2.5"/>
+  <rect x="1000" y="560" width="90" height="12" rx="5" fill="#40565F"/>
+  <text x="1045" y="596" font-size="11" text-anchor="middle" fill="#5D6C75">glass on load cell</text>
+  <path d="M1045 420 L1045 452" stroke="#0E8C7F" stroke-width="4" stroke-linecap="round"/>
+  <path d="M1037 443 L1045 455 L1053 443" fill="none" stroke="#0E8C7F" stroke-width="3.5"/>
+
+  <!-- WATER TUBES -->
+  <g stroke="#0E8C7F" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M145 330 L145 315 L250 315"/>
+    <path d="M272 315 L332 315"/>
+    <path d="M408 315 L460 315"/>
+    <path d="M570 315 L620 315"/>
+    <path d="M790 315 L840 315"/>
+    <path d="M910 315 L967 313"/>
+  </g>
+  <!-- tube labels -->
+  <g font-size="10.5" fill="#0A6B61">
+    <text x="180" y="305">T1 · 300 mm</text>
+    <text x="416" y="305">T3 · 80 mm</text>
+    <text x="576" y="305">T4 · 100 mm</text>
+    <text x="795" y="305">T5 · 80 mm</text>
+    <text x="915" y="303">T6 · 120 mm</text>
+  </g>
+  <text x="285" y="303" font-size="10.5" fill="#0A6B61">T2 · 90 mm</text>
+
+  <!-- section labels -->
+  <text x="145" y="120" font-size="12" font-weight="700" fill="#1B2731">1 · SUPPLY</text>
+  <text x="370" y="255" font-size="12" font-weight="700" fill="#1B2731" text-anchor="middle">2 · PUSH</text>
+  <text x="515" y="270" font-size="12" font-weight="700" fill="#1B2731" text-anchor="middle">3 · MEASURE</text>
+  <text x="705" y="270" font-size="12" font-weight="700" fill="#1B2731" text-anchor="middle">4 · HEAT</text>
+  <text x="1045" y="92" font-size="12" font-weight="700" fill="#1B2731" text-anchor="middle">5 · DOSE + MIX</text>
+
+  <!-- NOTES BOX -->
+  <rect x="70" y="440" width="820" height="270" rx="10" fill="#EAF1EF" stroke="#D9E1DE"/>
+  <text x="92" y="472" font-size="14" font-weight="700" fill="#0A6B61">BUILD NOTES</text>
+  <g font-size="13" fill="#1B2731" font-family="system-ui,sans-serif">
+    <text x="92" y="500">• Keep the pump BELOW tank water level (gravity-primed). The check valve stops drain-back between runs.</text>
+    <text x="92" y="526">• Tube T6 (heater → cone) is the hot section — silicone only, no PVC anywhere in this build.</text>
+    <text x="92" y="552">• The tangential inlet is the one geometry that matters: the tube must enter the cone OFF-CENTER along the</text>
+    <text x="92" y="572">&#160;&#160;rim so the water spins. A straight-in inlet will dribble down one wall and clump powder.</text>
+    <text x="92" y="598">• Mount the cartridge dock so the cartridge outlet is centred over the cone, 10–15 mm above the vapor shield.</text>
+    <text x="92" y="624">• Total head is under 0.5 m and flow 0.5 L/min — almost any potable 12 V diaphragm pump works.</text>
+    <text x="92" y="650">• Fittings: 8 mm barb tees/straights, PP or 304 SS. One spare tee makes the NTC pocket (epoxy the sensor in).</text>
+    <text x="92" y="676">• Sanitize before any taste test: flush 1:50 bleach solution 2 min, then 3 clean-water flushes.</text>
+  </g>
+</svg>
