@@ -55,6 +55,7 @@ suggestions — all fully usable with no phone present.
 | 6 | [docs/phase6-validation-testing.md](docs/phase6-validation-testing.md) | Dosing/stability test protocols, certification checklist, stage gates |
 | — | [docs/design-metering-venturi.md](docs/design-metering-venturi.md) | Deep dive: cartridge metering internals and wet-wall swirl manifold, with bench test plan |
 | — | [docs/mvp-build-spec.md](docs/mvp-build-spec.md) | **Buildable MVP**: shopping list (~$700 electronics + ~$450 printed parts), ESP32 pin map, 4-stage build order, pass/fail tests |
+| — | [docs/project-knowledge.md](docs/project-knowledge.md) | **Everything in one file** — self-contained program summary for sharing (Claude Project knowledge, data rooms, onboarding) |
 
 ### CAD (OpenSCAD, fully parametric)
 
