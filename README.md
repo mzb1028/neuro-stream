@@ -67,6 +67,13 @@ suggestions — all fully usable with no phone present.
 Every dimension is a named variable. Renders of all views are in
 [cad/renders/](cad/renders/).
 
+### Presentation pages
+
+| Where | Contents |
+|---|---|
+| [Live MVP Build Pack](https://claude.ai/code/artifact/5ff84554-1ebf-416a-b2bb-9e4c18771d7c) | Shareable web version of the build pack (private until shared from its menu) |
+| [docs/mvp-build-pack.html](docs/mvp-build-pack.html) | The same page, archived in-repo — open locally in any browser |
+
 ### Schematics & diagrams
 
 | File | Contents |
